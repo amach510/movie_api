@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-// log all requests; top movies
+// Log all requests; top movies
     let topMovies = [
         {
             title: 'Spirited Away',
@@ -54,7 +54,10 @@ const app = express();
         res.json(topMovies);
     });
 
-//listen requests
+// Express static
+    app.use(express.static('public'));
+    
+// Listen requests
     app.listen(8080, () => {
         console.log('Your app is listening on port 8080.');
     });
