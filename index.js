@@ -1,4 +1,6 @@
-const express = require('express');
+const express = require('express'),
+morgan = require('morgan');
+
 const app = express();
 
 // Log all requests; top movies
@@ -56,7 +58,10 @@ const app = express();
 
 // Express static
     app.use(express.static('public'));
-    
+
+// Morgan middleware library
+    app.use(morgan('common'));    
+
 // Listen requests
     app.listen(8080, () => {
         console.log('Your app is listening on port 8080.');
