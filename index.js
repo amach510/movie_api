@@ -171,6 +171,17 @@ const app = express();
     app.get('/movies', (req,res) => {
         res.status(200).json(movies)
     });
+        // READ request - title
+        app.get('/movies/:title', (req,res) => {
+            const { title } = req.params;
+            const movie = movies.find( movie => movie.Title === title);
+
+            if (movie){
+                res.status(200).json(movie);
+            } else {
+                res.status(400).send('no such movie')
+            }
+        });
 
     // GET request
     app.get('/', (req, res) => {
