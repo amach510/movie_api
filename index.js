@@ -167,7 +167,12 @@ const app = express();
         }
     ];
 
-// GET request
+    // READ request
+    app.get('/movies', (req,res) => {
+        res.status(200).json(movies)
+    });
+
+    // GET request
     app.get('/', (req, res) => {
         res.send ('Welcome to my movie page!');
     });
