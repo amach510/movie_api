@@ -6,6 +6,69 @@
     <title>myFlix</title>
 </head>
 <body>
-    <h1>A web api that allows users to sign up, update information and create a list of favorite movies.</h1>
+    <h1>Movie API</h1>
+        <p>A web api that allows users to sign up, update information and create a list of favorite movies.        
+        </p>
+    <!-- Table for endpoints-->
+    <h2>Movie Endpoints</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Request</th>
+                    <th>URL</th>
+                    <th>Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>GET</td>
+                    <td>/movies</td>
+                    <td>List of all movies</td>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>/movies/{title}</td>
+                    <td>Data about a single movie by title</td>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>/genres/{genreName}</td>
+                    <td>Data about a genre {description} by name</td>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>/release/{releaseYear}</td>
+                    <td>Data about a director (bio, birth year, death year)</td>
+                </tr>
+                <tr>
+                    <td>GET</td>
+                    <td>/year</td>
+                    <td>Data about all the movies by requested year of release</td>
+                </tr>
+            </tbody>
+        </table>
+    
+    <h2> User Endpoints:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Request</th>
+                    <th>URL</th>
+                    <th>Response</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>POST</td>
+                    <td>/users/register</td>
+                    <td>Register a new user</td>
+                </tr>
+                <tr>
+                    <td>PUT</td>
+                    <td>/users/{userId}/update</td>
+                    <td>Update user information (username)</td>
+                </tr>
+            </tbody>
+        </table>
 </body>
 </html>
