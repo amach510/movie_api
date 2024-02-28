@@ -4,7 +4,7 @@ morgan = require('morgan');
 const app = express();
 
 // Log all requests; top movies
-    let topMovies = [
+    let movies = [
         {
             title: 'Spirited Away',
             description: 'Vivid and intriguing, Spirited Away tells the story of Chihiro\'s journey through an unfamiliar world as she strives to save her parents and return home.',
@@ -174,7 +174,7 @@ const app = express();
         // READ request - title
         app.get('/movies/:title', (req,res) => {
             const { title } = req.params;
-            const movie = movies.find( movie => movie.Title === title);
+            const movie = movies.find( movie => movie.title === title);
 
             if (movie){
                 res.status(200).json(movie);
