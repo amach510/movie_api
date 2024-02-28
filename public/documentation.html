@@ -68,6 +68,30 @@
                     <td>/users/{userId}/update</td>
                     <td>Update user information (username)</td>
                 </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/users/{userId}/favorites/add</td>
+                    <td>
+                        <p>Allows users to add a movie to their list of favorites.</p>
+                        <p>Response: "Movie has been added to favorites."</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/users/{userId}/favorites/remove</td>
+                    <td>
+                        <p>Allows users to remove a movie from their list of favorites.</p>
+                        <p>Response: "Movie has been removed from favorites."</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DELETE</td>
+                    <td>/users/{userId}/deregister</td>
+                    <td>
+                        <p>Allows existing users to deregister.</p>
+                        <p>Response: "User email has been removed."</p>
+                    </td>
+                </tr>
             </tbody>
         </table>
 </body>
