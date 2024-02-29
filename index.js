@@ -1,8 +1,7 @@
-const express = require('express'),
-    bodyParser = require('body-parser'),
-    uuid = require('uuid');
-    morgan = require('morgan');
-    app.use(bodyParser.json());
+const express = require('express');
+const bodyParser = require('body-parser');
+const uuid = require('uuid');
+const morgan = require('morgan');
 const app = express();
 
 // Log all requests
@@ -246,6 +245,9 @@ const app = express();
 
 // Express static
     app.use(express.static('public'));
+
+// Body Parser
+    app.use(bodyParser.json());
 
 // Morgan middleware library
     app.use(morgan('common'));    
