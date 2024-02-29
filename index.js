@@ -1,9 +1,25 @@
 const express = require('express'),
-morgan = require('morgan');
-
+    bodyParser = require('body-parser'),
+    uuid = require('uuid');
+    morgan = require('morgan');
+    app.use(bodyParser.json());
 const app = express();
 
-// Log all requests; top movies
+// Log all requests
+    
+    let users = [
+        {
+            id: 1,
+            name: 'Jim',
+            favoriteMovies: ['Weathering with You']
+        },
+        {
+            id: 2,
+            name: 'Carrie',
+            favoriteMovies: []
+        }
+    ]
+
     let movies = [
         {
             title: 'Spirited Away',
@@ -166,6 +182,19 @@ const app = express();
             featured: false
         }
     ];
+
+    //CREATE request - new user
+    app.post('/users', (req,res) => {
+        const newUser = req.body;
+        
+        if (newUser.name) {
+            newUser.id = uuid.v4();
+            URLSearchParams.push(newUser);
+            res.status(201).json(newUser)
+        } else {
+            res.status(400).send('user needs names')
+        }
+    });
 
     // READ request
     app.get('/movies', (req,res) => {
