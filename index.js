@@ -212,7 +212,7 @@ const app = express();
     });
 
     app.get('/movies', (req,res) => {
-        res.json(topMovies);
+        res.json(movies);
     });
 
 // Express static
