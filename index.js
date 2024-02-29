@@ -182,6 +182,17 @@ const app = express();
                 res.status(400).send('no such movie')
             }
         });
+        // READ request - genre
+        app.get('/movies/genre/:genrename', (req,res) => {
+            const { genrename } = req.params;
+            const genre = movies.find( movie => movie.genre.name === genrename).genre;
+
+            if (genre){
+                res.status(200).json(genre);
+            } else {
+                res.status(400).send('no such genre')
+            }
+        });
 
     // GET request
     app.get('/', (req, res) => {
