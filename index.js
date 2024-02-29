@@ -13,7 +13,7 @@ const app = express();
                     description:'The supernatural genre encompasses storytelling that involves elements beyond the natural world, often featuring supernatural phenomena, mystical forces, paranormal activities, or entities that defy the laws of nature.'
                     },
             director: {
-                    directorName: 'Miyazaki, Hayao',
+                    name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
                     birth: '1941'
                 },
@@ -29,7 +29,7 @@ const app = express();
                     description: 'The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations.'
                 },
             director: {
-                    directorName: 'Shinkai, Makoto',
+                    name: 'Shinkai, Makoto',
                     bio: 'Regarded as "The New Miyazki"',
                     birth: '1973'
                 },
@@ -45,7 +45,7 @@ const app = express();
                     description: 'Romance is a genre characterized by narratives that center around love and emotional relationships, often highlighting the development of romantic connections, challenges, and the pursuit of intimacy between characters.'
                 },
             director: {
-                    directorName: 'Shinkai, Makoto',
+                    name: 'Shinkai, Makoto',
                     bio: 'Regarded as "The New Miyazki"',
                     birth: '1973'
                 },
@@ -61,7 +61,7 @@ const app = express();
                 description:'The supernatural genre encompasses storytelling that involves elements beyond the natural world, often featuring supernatural phenomena, mystical forces, paranormal activities, or entities that defy the laws of nature.'
                 },
             director: {
-                    directorName: 'Miyazaki, Hayao',
+                    name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
                     birth: '1941'
                 },
@@ -77,7 +77,7 @@ const app = express();
                     description: 'The adventure genre encompasses narratives that revolve around characters undertaking perilous journeys, quests, or explorations, often featuring excitement, challenges, and a sense of discovery in unfamiliar and thrilling environments.'
                 },
             director: {
-                    directorName: 'Miyazaki, Hayao',
+                    name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
                     birth: '1941'
                 },
@@ -93,7 +93,7 @@ const app = express();
                     description: 'Science fiction, or sci-fi, is a genre that explores speculative and futuristic concepts, often incorporating advanced technology, space exploration, and scientific principles to envision alternative realities, possible futures, and the impact of scientific advancements on society.'
                 },
             director: {
-                    directorName: 'Koike, Takeshi',
+                    name: 'Koike, Takeshi',
                     bio: 'Protegee of Yoshiaki Kawajiri',
                     birth: '1968'
                 },
@@ -109,7 +109,7 @@ const app = express();
                     description: 'Fantasy is a genre characterized by imaginative and often magical elements, where stories unfold in fantastical worlds with mythical creatures, magical powers, and extraordinary settings that go beyond the bounds of reality.'
                 },
             director: {
-                    directorName: 'Miyazaki, Hayao',
+                    name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
                     birth: '1941'
                 },
@@ -125,7 +125,7 @@ const app = express();
                     description: 'The adventure genre encompasses narratives that revolve around characters undertaking perilous journeys, quests, or explorations, often featuring excitement, challenges, and a sense of discovery in unfamiliar and thrilling environments.'
                 },
             director: {
-                    directorName: 'Miyazaki, Hayao',
+                    name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
                     birth: '1941'
                 },
@@ -141,7 +141,7 @@ const app = express();
                 description: 'The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations.'
             },
             director: {
-                    directorName: 'Yamada, Naoko',
+                    name: 'Yamada, Naoko',
                     bio: 'Directed the K-On! and Tamako Market anime series',
                     birth: '1984'
                 },
@@ -157,7 +157,7 @@ const app = express();
                     description: 'The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations.'
                 },
             director: {
-                    directorName: 'Yuasa, Masaaki',
+                    name: 'Yuasa, Masaaki',
                     bio:'Co-founded Science SARU',
                     birth:'1965'
                 },
@@ -191,6 +191,18 @@ const app = express();
                 res.status(200).json(genre);
             } else {
                 res.status(400).send('no such genre')
+            }
+        });
+
+        // READ request - director
+        app.get('/movies/director/:directorName', (req,res) => {
+            const { directorName } = req.params;
+            const director = movies.find( movie => movie.director.name === directorName).director;
+
+            if (director){
+                res.status(200).json(director);
+            } else {
+                res.status(400).send('no such director')
             }
         });
 
