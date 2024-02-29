@@ -7,8 +7,10 @@ const app = express();
 // Body Parser
 app.use(bodyParser.json());
 
+// Morgan middleware library
+app.use(morgan('common'));    
+
 // Log all requests
-    
     let users = [
         {
             id: 1,
@@ -263,9 +265,6 @@ app.use(bodyParser.json());
 
 // Express static
     app.use(express.static('public'));
-
-// Morgan middleware library
-    app.use(morgan('common'));    
 
 // Error handler
     app.use((err, req, res, next) => {
