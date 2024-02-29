@@ -9,7 +9,7 @@ const app = express();
             title: 'Spirited Away',
             description: 'Vivid and intriguing, Spirited Away tells the story of Chihiro\'s journey through an unfamiliar world as she strives to save her parents and return home.',
             genre: {
-                    name: ['Animation', 'Supernatural'],
+                    name: 'Supernatural',
                     description:'The supernatural genre encompasses storytelling that involves elements beyond the natural world, often featuring supernatural phenomena, mystical forces, paranormal activities, or entities that defy the laws of nature.'
                     },
             director: {
@@ -25,7 +25,7 @@ const app = express();
             title: 'Your Name',
             description: 'Your Name revolves around Mitsuha and Taki\'s actions, which begin to have a dramatic impact on each other\'s lives, weaving them into a fabric held together by fate and circumstance.',
             genre: {
-                    name: ['Animation', 'Drama', 'Supernatural'],
+                    name: 'Drama',
                     description: 'The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations.'
                 },
             director: {
@@ -41,7 +41,7 @@ const app = express();
             title: 'Weathering with You',
             description: 'Enchanting yet bittersweet love story between a teenage boy who can control the weather and a girl with a mysterious ability, set against the backdrop of a Tokyo plagued by incessant rain.',
             genre: {
-                    name: ['Animation','Romance', 'Drama', 'Fantasy'],
+                    name: 'Romance',
                     description: 'Romance is a genre characterized by narratives that center around love and emotional relationships, often highlighting the development of romantic connections, challenges, and the pursuit of intimacy between characters.'
                 },
             director: {
@@ -57,7 +57,7 @@ const app = express();
             title: 'My Neighbor Totoro',
             description: 'The magical adventures of two young sisters who befriend forest spirits, particularly the lovable creature Totoro, while navigating the challenges of moving to a new countryside home.',
             genre: {
-                name: ['Animation', 'Supernatural'],
+                name: 'Supernatural',
                 description:'The supernatural genre encompasses storytelling that involves elements beyond the natural world, often featuring supernatural phenomena, mystical forces, paranormal activities, or entities that defy the laws of nature.'
                 },
             director: {
@@ -73,7 +73,7 @@ const app = express();
             title: 'Nausicaä of the Valley of the Wind',
             description: 'The courageous Princess Nausicaä strives to bring harmony between humanity and the environment in a post-apocalyptic world threatened by toxic jungles and warring nations.',
             genre:{ 
-                    name: ['Animation', 'Adventure', 'Fantasy'],
+                    name: 'Adventure',
                     description: 'The adventure genre encompasses narratives that revolve around characters undertaking perilous journeys, quests, or explorations, often featuring excitement, challenges, and a sense of discovery in unfamiliar and thrilling environments.'
                 },
             director: {
@@ -89,7 +89,7 @@ const app = express();
             title: 'Redline',
             description: 'High-octane Japanese animated film, featuring intense, intergalactic racing competition as daredevil racer JP strives to win the ultimate Redline race on a dangerous and visually stunning alien planet.',
             genre:{ 
-                    name: ['Animation', 'Sci-Fi', 'Action'],
+                    name: 'Sci-Fi',
                     description: 'Science fiction, or sci-fi, is a genre that explores speculative and futuristic concepts, often incorporating advanced technology, space exploration, and scientific principles to envision alternative realities, possible futures, and the impact of scientific advancements on society.'
                 },
             director: {
@@ -105,7 +105,7 @@ const app = express();
             title: 'Princess Mononoke',
             description: 'Chronicling the journey of a young warrior named Ashitaka, who becomes entangled in a conflict between industrial humans and nature spirits, led by the fierce and enigmatic Princess Mononoke, in a beautifully crafted tale of environmentalism and the struggle for balance.',
             genre:{
-                    name: ['Animation', 'Fantasy', 'Action', 'Adventure'],
+                    name: 'Fantasy',
                     description: 'Fantasy is a genre characterized by imaginative and often magical elements, where stories unfold in fantastical worlds with mythical creatures, magical powers, and extraordinary settings that go beyond the bounds of reality.'
                 },
             director: {
@@ -121,7 +121,7 @@ const app = express();
             title: 'Kiki\'s Delivery Service',
             description: 'Following the coming-of-age journey of a young witch named Kiki as she establishes her own delivery service in a quaint seaside town, discovering friendship and self-confidence along the way.',
             genre: {
-                    name: ['Animation', 'Adventure', 'Comedy', 'Drama', 'Fantasy'],
+                    name: 'Adventure',
                     description: 'The adventure genre encompasses narratives that revolve around characters undertaking perilous journeys, quests, or explorations, often featuring excitement, challenges, and a sense of discovery in unfamiliar and thrilling environments.'
                 },
             director: {
@@ -137,7 +137,7 @@ const app = express();
             title: 'A Silent Voice',
             description: 'Delving into themes of redemption and empathy as it tells the story of a former bully seeking redemption and connection with a deaf classmate he once tormented in elementary school.',
             genre: {
-                name: ['Animation', 'Drama'],
+                name: 'Drama',
                 description: 'The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations.'
             },
             director: {
@@ -153,7 +153,7 @@ const app = express();
             title: 'Ride Your Wave',
             description: 'Blending romance and fantasy as it follows a young woman who discovers the transformative power of love and resilience after her surfer boyfriend\'s tragic death.',
             genre: {
-                    name: ['Animation', 'Drama', 'Romance', 'Supernatural'],
+                    name: 'Drama',
                     description: 'The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations.'
                 },
             director: {
