@@ -19,7 +19,7 @@ app.use(bodyParser.json());
             id: 2,
             name: 'Carrie',
             favoriteMovies: []
-        }
+        },
     ]
 
     let movies = [
