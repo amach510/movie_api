@@ -182,7 +182,7 @@ const app = express();
         }
     ];
 
-    //CREATE request - new user
+    // CREATE request - new user
     app.post('/users', (req,res) => {
         const newUser = req.body;
         
@@ -194,6 +194,21 @@ const app = express();
             res.status(400).send('user needs names')
         }
     });
+
+    // UPDATE (PUT) request - existing user update
+    app.put('/users/:id', (req,res) => {
+        const { id } = req.params;
+        const updatedUser = req.body;
+        
+        let user = users.find( user => user.id == id );
+        
+        if (user) {
+            user.name = updatedUser.name;
+            res.status(200).json(user);
+        } else {
+            res.status(400).send('no such user')
+        }
+    });    
 
     // READ request
     app.get('/movies', (req,res) => {
