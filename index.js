@@ -4,6 +4,9 @@ const uuid = require('uuid');
 const morgan = require('morgan');
 const app = express();
 
+// Body Parser
+app.use(bodyParser.json());
+
 // Log all requests
     
     let users = [
@@ -260,9 +263,6 @@ const app = express();
 
 // Express static
     app.use(express.static('public'));
-
-// Body Parser
-    app.use(bodyParser.json());
 
 // Morgan middleware library
     app.use(morgan('common'));    
