@@ -188,7 +188,7 @@ const app = express();
         
         if (newUser.name) {
             newUser.id = uuid.v4();
-            URLSearchParams.push(newUser);
+            users.push(newUser);
             res.status(201).json(newUser)
         } else {
             res.status(400).send('user needs names')
