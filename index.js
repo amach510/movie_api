@@ -35,7 +35,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
-                    birth: '1941'
+                    birthYear: '1941',
+                    deathYear: '',
                 },
             imageURL: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTqTEoJUOlTg4HakvM3SHU0a7a3gFpAQ1HrBL21fBAr1OYOeocP",
             date: '2001',
@@ -51,7 +52,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Shinkai, Makoto',
                     bio: 'Regarded as "The New Miyazki"',
-                    birth: '1973'
+                    birthYear: '1973',
+                    deathYear: '',
                 },
             imageURL: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSdCn7P_niNCbNFHt9vLgDc-YlRIhwvnCPtHzyiHVP_GK-XmDS1",
             date: '2016',
@@ -67,7 +69,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Shinkai, Makoto',
                     bio: 'Regarded as "The New Miyazki"',
-                    birth: '1973'
+                    birthYear: '1973',
+                    deathYear: '',
                 },
             imageURL: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfiDnbbGZmmZfAnbjsU_AKKAsRfa4VmskkCWbhrmrYqnVtZWq2",
             date: '2019',
@@ -83,7 +86,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
-                    birth: '1941'
+                    birthYear: '1941',
+                    deathYear: '',
                 },
             imageURL: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShhQmWrd7gqouln_mhRDdoLy8MkIOwZj1cNx7xhUU2I4cB0IEJ',
             date: '1988',
@@ -99,7 +103,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
-                    birth: '1941'
+                    birthYear: '1941',
+                    deathYear: '',
                 },
             imageURL: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRGi4HGfC4oJM34jPoaTDWLvMOlNxiXk0DZSyO57mQtZb2FirdB',
             date: '1984',
@@ -115,7 +120,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Koike, Takeshi',
                     bio: 'Protegee of Yoshiaki Kawajiri',
-                    birth: '1968'
+                    birthYear: '1968',
+                    deathYear: '',
                 },
             imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-r0UhA_dp_pNbQQY1l1GytMTOEAS6qD-413w9f-2ME5tg6GEF',
             date: '2009',
@@ -131,7 +137,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
-                    birth: '1941'
+                    birthYear: '1941',
+                    deathYear: '',
                 },
             imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQntZTJb1c6O4iFaT_Ll3w4a-R3TzlpID2dJ0wDdwjemnMbOx7r',
             date: '1997',
@@ -147,7 +154,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Miyazaki, Hayao',
                     bio: 'Founder of Studio Ghibli',
-                    birth: '1941'
+                    birthYear: '1941',
+                    deathYear: '',
                 },
             imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHAXQmo6UAT_P8xIAppBglmEruxxExDBGELnwXCqjDjZToWwXr',
             date: '1989',
@@ -163,7 +171,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Yamada, Naoko',
                     bio: 'Directed the K-On! and Tamako Market anime series',
-                    birth: '1984'
+                    birthYear: '1984',
+                    deathYear: '',
                 },
             imageURL: 'https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQJrlYXvqlm1bAFMMfjhlX970K4B0z2AJv66KKb1Y9gW-4eml2X',
             date: '2016',
@@ -179,7 +188,8 @@ app.use(morgan('common'));
             director: {
                     name: 'Yuasa, Masaaki',
                     bio:'Co-founded Science SARU',
-                    birth:'1965'
+                    birthYear:'1965',
+                    deathYear: '',
                 },
             imageURL: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5FoZxavLyV9NpxWm1XGPwVEQ0qAon_B6KIv55nJb3BAjfAX-V',
             date: '2020',
