@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-    let movieSchema = mongoose.Schema({
+    let moviesSchema = mongoose.Schema({
         Title: {type: String, required: true},
         Description: {type: String, required: true},
         Genre: {
@@ -15,7 +15,7 @@ const mongoose = require('mongoose');
         Featured: Boolean
     });
     
-    let userSchema = mongoose.Schema({
+    let usersSchema = mongoose.Schema({
         Username: {type: String, required: true},
         Password: {type: String, required: true},
         Email: {type: String, required: true},
