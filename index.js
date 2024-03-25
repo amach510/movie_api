@@ -4,6 +4,16 @@ const uuid = require('uuid');
 const morgan = require('morgan');
 const app = express();
 
+//Integrating Mongoose
+const mongoose = require('mongoose');
+const Models = require('./models.js');
+
+const Movies = Models.Movie;
+const Users = Models.User;
+
+//allows mongoose connection to database for CRUD
+mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, useUnifiedTopology: true });
+
 // Body Parser
 app.use(bodyParser.json());
 

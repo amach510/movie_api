@@ -1,12 +1,3 @@
-const mongoose = require('mongoose');
-const Models = require('./models.js');
-
-const Movies = Models.Movie;
-const Users = Models.User;
-
-//allows mongoose connection to database for CRUD
-mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, useUnifiedTopology: true });
-
     let moviesSchema = mongoose.Schema({
         Title: {type: String, required: true},
         Description: {type: String, required: true},
