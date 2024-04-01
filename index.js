@@ -209,25 +209,25 @@ app.use(morgan('common'));
 
     // CREATE request - new user
     //Add a user
-    /* We’ll expect JSON in this format
-    {
-        ID: Integer,
-        Username: String,
-        Password: String,
-        Email: String,
-        Birthday: Date
-    }*/
+        /* We’ll expect JSON in this format
+        {
+            ID: Integer,
+            Username: String,
+            Password: String,
+            Email: String,
+            Birthday: Date
+        }*/
     app.post('/users', async (req,res) => {
-    //     const newUser = req.body;
-        
-    //     if (newUser.name) {
-    //         newUser.id = uuid.v4();
-    //         users.push(newUser);
-    //         res.status(201).json(newUser)
-    //     } else {
-    //         res.status(400).send('user needs names')
-    //     }
-    // });
+        //     const newUser = req.body;
+            
+        //     if (newUser.name) {
+        //         newUser.id = uuid.v4();
+        //         users.push(newUser);
+        //         res.status(201).json(newUser)
+        //     } else {
+        //         res.status(400).send('user needs names')
+        //     }
+        // });
         await Users.findOne({ Username: req.body.Username })
           .then((user) => {
             if (user) {
@@ -254,29 +254,29 @@ app.use(morgan('common'));
       });
 
     // UPDATE (PUT) request - existing user update
-    /* We’ll expect JSON in this format
-    {
-        Username: String,
-        (required)
-        Password: String,
-        (required)
-        Email: String,
-        (required)
-        Birthday: Date
-    }*/
+        /* We’ll expect JSON in this format
+        {
+            Username: String,
+            (required)
+            Password: String,
+            (required)
+            Email: String,
+            (required)
+            Birthday: Date
+        }*/
     app.put('/users/:id', async(req,res) => {
-    //     const { id } = req.params;
-    //     const updatedUser = req.body;
-        
-    //     let user = users.find( user => user.id == id );
-        
-    //     if (user) {
-    //         user.name = updatedUser.name;
-    //         res.status(200).json(user);
-    //     } else {
-    //         res.status(400).send('no such user')
-    //     }
-    // });    
+        //     const { id } = req.params;
+        //     const updatedUser = req.body;
+            
+        //     let user = users.find( user => user.id == id );
+            
+        //     if (user) {
+        //         user.name = updatedUser.name;
+        //         res.status(200).json(user);
+        //     } else {
+        //         res.status(400).send('no such user')
+        //     }
+        // });    
         await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
             {
             Username: req.body.Username,
@@ -297,18 +297,18 @@ app.use(morgan('common'));
         });
 
     // CREATE (POST) request - adding movie to favorites
-    // app.post('/users/:id/:movietitle', (req,res) => {
-    //     const { id, movietitle } = req.params;
-        
-    //     let user = users.find( user => user.id == id );
-        
-    //     if (user) {
-    //         user.favoriteMovies.push(movietitle);
-    //         res.status(200).send(`${movietitle} has been added to user ${id}'s array`);
-    //     } else {
-    //         res.status(400).send('no such user')
-    //     }
-    // });  
+        // app.post('/users/:id/:movietitle', (req,res) => {
+        //     const { id, movietitle } = req.params;
+            
+        //     let user = users.find( user => user.id == id );
+            
+        //     if (user) {
+        //         user.favoriteMovies.push(movietitle);
+        //         res.status(200).send(`${movietitle} has been added to user ${id}'s array`);
+        //     } else {
+        //         res.status(400).send('no such user')
+        //     }
+        // });  
     app.post('/users/:Username/movies/:MovieID', async (req, res) => {
         await Users.findOneAndUpdate({ Username: req.params.Username }, {
            $push: { FavoriteMovies: req.params.MovieID }
@@ -338,18 +338,18 @@ app.use(morgan('common'));
     });  
 
     // DELETE (DELETE) request - delete existing user
-    // app.delete('/users/:id', (req,res) => {
-    //     const { id } = req.params;
-        
-    //     let user = users.find( user => user.id == id );
-        
-    //     if (user) {
-    //         users = users.filter(user => user.id != id);
-    //         res.status(200).send(`user ${id} has been deleted`);
-    //     } else {
-    //         res.status(400).send('no such user')
-    //     }
-    // });  
+        // app.delete('/users/:id', (req,res) => {
+        //     const { id } = req.params;
+            
+        //     let user = users.find( user => user.id == id );
+            
+        //     if (user) {
+        //         users = users.filter(user => user.id != id);
+        //         res.status(200).send(`user ${id} has been deleted`);
+        //     } else {
+        //         res.status(400).send('no such user')
+        //     }
+        // });  
     app.delete('/users/:Username', async (req, res) => {
         await Users.findOneAndDelete({ Username: req.params.Username })
           .then((user) => {
