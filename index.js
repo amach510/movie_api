@@ -348,6 +348,7 @@ app.use(morgan('common'));
                 res.status(400).send('no such director')
             }
         });
+    
     // READ all users
     app.get('/users', async (req, res) => {
         await Users.find()
@@ -360,7 +361,7 @@ app.use(morgan('common'));
         });
     });
 
-    // GET request
+    // GET requests
     app.get('/', (req, res) => {
         res.send ('Welcome to my movie page!');
     });
@@ -369,6 +370,17 @@ app.use(morgan('common'));
         res.json(movies);
     });
 
+    // Get a user by username
+    app.get('/users/:Username', async (req, res) => {
+        await Users.findOne({ Username: req.params.Username })
+        .then((user) => {
+            res.json(user);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+    });
 // Express static
     app.use(express.static('public'));
 
