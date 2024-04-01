@@ -310,7 +310,7 @@ app.use(morgan('common'));
         }
     });  
     
-    // READ request
+    // READ request (Movies)
     app.get('/movies', (req,res) => {
         res.status(200).json(movies)
     });
@@ -348,6 +348,17 @@ app.use(morgan('common'));
                 res.status(400).send('no such director')
             }
         });
+    // READ all users
+    app.get('/users', async (req, res) => {
+        await Users.find()
+        .then((users) => {
+            res.status(201).json(users);
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+        });
+    });
 
     // GET request
     app.get('/', (req, res) => {
