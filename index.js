@@ -422,16 +422,26 @@ app.use(morgan('common'));
             });
 
         // READ request - director
-        app.get('/movies/director/:directorName', (req,res) => {
-            const { directorName } = req.params;
-            const director = movies.find( movie => movie.director.name === directorName).director;
+            // app.get('/movies/director/:directorName', (req,res) => {
+            //     const { directorName } = req.params;
+            //     const director = movies.find( movie => movie.director.name === directorName).director;
 
-            if (director){
-                res.status(200).json(director);
-            } else {
-                res.status(400).send('no such director')
-            }
-        });
+            //     if (director){
+            //         res.status(200).json(director);
+            //     } else {
+            //         res.status(400).send('no such director')
+            //     }
+            // });
+            app.get('/movies/director/:directorName', async (req,res) => {
+                await Movies.findOne({ 'Director.Name': req.params.directorName })
+                    .then((movie) => {
+                        res.json(movie.Director);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        res.status(500).send('Error: ' + err);
+                    });
+            });
     
     // READ all users
     app.get('/users', async (req, res) => {
