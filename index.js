@@ -403,7 +403,7 @@ const app = express();
             //     }
             // });
             app.get('/movies/:title', async (req, res) => {
-                await Movies.findOne({ Name: req.params.Name })
+                await Movies.findOne({ Title: req.params.title })
                     .then((movie) => {
                         res.json(movie);
                     })
