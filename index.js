@@ -5,20 +5,20 @@ const morgan = require('morgan');
 const app = express();
 
 //Integrating Mongoose
-const mongoose = require('mongoose');
-const Models = require('./models.js');
+    const mongoose = require('mongoose');
+    const Models = require('./models.js');
 
-const Movies = Models.Movie;
-const Users = Models.User;
+    const Movies = Models.Movie;
+    const Users = Models.User;
 
 //allows mongoose connection to database for CRUD
-mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, useUnifiedTopology: true });
+    mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Body Parser
-app.use(bodyParser.json());
+    app.use(bodyParser.json());
 
 // Morgan middleware library
-app.use(morgan('common'));    
+    app.use(morgan('common'));    
 
 // Log all requests
     // let users = [
@@ -264,37 +264,37 @@ app.use(morgan('common'));
             (required)
             Birthday: Date
         }*/
-    app.put('/users/:id', async(req,res) => {
-        //     const { id } = req.params;
-        //     const updatedUser = req.body;
+        app.put('/users/:id', async(req,res) => {
+            //     const { id } = req.params;
+            //     const updatedUser = req.body;
+                
+            //     let user = users.find( user => user.id == id );
+                
+            //     if (user) {
+            //         user.name = updatedUser.name;
+            //         res.status(200).json(user);
+            //     } else {
+            //         res.status(400).send('no such user')
+            //     }
+            // });    
+            await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
+                {
+                Username: req.body.Username,
+                Password: req.body.Password,
+                Email: req.body.Email,
+                Birthday: req.body.Birthday
+                }
+            },
+            { new: true }) // This line makes sure that the updated document is returned
+            .then((updatedUser) => {
+                res.json(updatedUser);
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).send('Error: ' + err);
+            })
             
-        //     let user = users.find( user => user.id == id );
-            
-        //     if (user) {
-        //         user.name = updatedUser.name;
-        //         res.status(200).json(user);
-        //     } else {
-        //         res.status(400).send('no such user')
-        //     }
-        // });    
-        await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
-            {
-            Username: req.body.Username,
-            Password: req.body.Password,
-            Email: req.body.Email,
-            Birthday: req.body.Birthday
-            }
-        },
-        { new: true }) // This line makes sure that the updated document is returned
-        .then((updatedUser) => {
-            res.json(updatedUser);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).send('Error: ' + err);
-        })
-        
-        });
+            });
 
     // CREATE (POST) request - adding movie to favorites
         // app.post('/users/:id/:movietitle', (req,res) => {
@@ -309,19 +309,19 @@ app.use(morgan('common'));
         //         res.status(400).send('no such user')
         //     }
         // });  
-    app.post('/users/:Username/movies/:MovieID', async (req, res) => {
-        await Users.findOneAndUpdate({ Username: req.params.Username }, {
-           $push: { FavoriteMovies: req.params.MovieID }
-         },
-         { new: true }) // This line makes sure that the updated document is returned
-        .then((updatedUser) => {
-          res.json(updatedUser);
-        })
-        .catch((err) => {
-          console.error(err);
-          res.status(500).send('Error: ' + err);
+        app.post('/users/:Username/movies/:MovieID', async (req, res) => {
+            await Users.findOneAndUpdate({ Username: req.params.Username }, {
+            $push: { FavoriteMovies: req.params.MovieID }
+            },
+            { new: true }) // This line makes sure that the updated document is returned
+            .then((updatedUser) => {
+            res.json(updatedUser);
+            })
+            .catch((err) => {
+            console.error(err);
+            res.status(500).send('Error: ' + err);
+            });
         });
-      });
 
     // DELETE (DELETE) request - delete movie from favorites
         // app.delete('/users/:id/:movietitle', (req,res) => {
@@ -363,20 +363,20 @@ app.use(morgan('common'));
         //         res.status(400).send('no such user')
         //     }
         // });  
-    app.delete('/users/:Username', async (req, res) => {
-        await Users.findOneAndDelete({ Username: req.params.Username })
-          .then((user) => {
-            if (!user) {
-              res.status(400).send(req.params.Username + ' was not found');
-            } else {
-              res.status(200).send(req.params.Username + ' was deleted.');
-            }
-          })
-          .catch((err) => {
-            console.error(err);
-            res.status(500).send('Error: ' + err);
-          });
-      });
+        app.delete('/users/:Username', async (req, res) => {
+            await Users.findOneAndDelete({ Username: req.params.Username })
+            .then((user) => {
+                if (!user) {
+                res.status(400).send(req.params.Username + ' was not found');
+                } else {
+                res.status(200).send(req.params.Username + ' was deleted.');
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).send('Error: ' + err);
+            });
+        });
     
     // READ request (Movies)
         // app.get('/movies', (req,res) => {
@@ -457,37 +457,37 @@ app.use(morgan('common'));
             });
     
     // READ all users
-    app.get('/users', async (req, res) => {
-        await Users.find()
-        .then((users) => {
-            res.status(201).json(users);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).send('Error: ' + err);
+        app.get('/users', async (req, res) => {
+            await Users.find()
+            .then((users) => {
+                res.status(201).json(users);
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).send('Error: ' + err);
+            });
         });
-    });
 
     // GET requests
-    app.get('/', (req, res) => {
-        res.send ('Welcome to my movie page!');
-    });
+        app.get('/', (req, res) => {
+            res.send ('Welcome to my movie page!');
+        });
 
-    app.get('/movies', (req,res) => {
-        res.json(movies);
-    });
+        app.get('/movies', (req,res) => {
+            res.json(movies);
+        });
 
     // Get a user by username
-    app.get('/users/:Username', async (req, res) => {
-        await Users.findOne({ Username: req.params.Username })
-        .then((user) => {
-            res.json(user);
-        })
-        .catch((err) => {
-            console.error(err);
-            res.status(500).send('Error: ' + err);
+        app.get('/users/:Username', async (req, res) => {
+            await Users.findOne({ Username: req.params.Username })
+            .then((user) => {
+                res.json(user);
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500).send('Error: ' + err);
+            });
         });
-    });
 // Express static
     app.use(express.static('public'));
 
