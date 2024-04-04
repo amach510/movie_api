@@ -212,10 +212,10 @@ const app = express();
         /* We’ll expect JSON in this format
         {
             ID: Integer,
-            username: String,
-            password: String,
-            email: String,
-            birthday: Date
+            Username: String,
+            Password: String,
+            Email: String,
+            Birthday: Date
         }*/
     app.post('/users', async (req,res) => {
         //     const newUser = req.body;
@@ -228,17 +228,17 @@ const app = express();
         //         res.status(400).send('user needs names')
         //     }
         // });
-        await Users.findOne({ username: req.body.Username })
+        await Users.findOne({ Username: req.body.Username })
           .then((user) => {
             if (user) {
               return res.status(400).send(req.body.Username + 'already exists');
             } else {
               Users
                 .create({
-                  username: req.body.Username,
-                  password: req.body.Password,
-                  email: req.body.Email,
-                  birthday: req.body.Birthday
+                  Username: req.body.Username,
+                  Password: req.body.Password,
+                  Email: req.body.Email,
+                  Birthday: req.body.Birthday
                 })
                 .then((user) =>{res.status(201).json(user) })
               .catch((error) => {
@@ -256,13 +256,13 @@ const app = express();
     // UPDATE (PUT) request - existing user update
         /* We’ll expect JSON in this format
         {
-            username: String,
+            Username: String,
             (required)
-            password: String,
+            Password: String,
             (required)
-            email: String,
+            Email: String,
             (required)
-            birthday: Date
+            Birthday: Date
         }*/
         app.put('/users/:id', async(req,res) => {
             //     const { id } = req.params;
@@ -277,12 +277,12 @@ const app = express();
             //         res.status(400).send('no such user')
             //     }
             // });    
-            await Users.findOneAndUpdate({ username: req.params.Username }, { $set:
+            await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
                 {
-                username: req.body.Username,
-                password: req.body.Password,
-                email: req.body.Email,
-                birthday: req.body.Birthday
+                Username: req.body.Username,
+                Password: req.body.Password,
+                Email: req.body.Email,
+                Birthday: req.body.Birthday
                 }
             },
             { new: true }) // This line makes sure that the updated document is returned
@@ -310,7 +310,7 @@ const app = express();
         //     }
         // });  
         app.post('/users/:Username/movies/:MovieID', async (req, res) => {
-            await Users.findOneAndUpdate({ username: req.params.Username }, {
+            await Users.findOneAndUpdate({ Username: req.params.Username }, {
             $push: { FavoriteMovies: req.params.MovieID }
             },
             { new: true }) // This line makes sure that the updated document is returned
@@ -337,7 +337,7 @@ const app = express();
         //     }
         // });
         app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
-            await Users.findOneAndUpdate({ username: req.params.Username }, {
+            await Users.findOneAndUpdate({ Username: req.params.Username }, {
                 $pull: { FavoriteMovies: req.params.MovieID }
             },
             { new: true }) // This line makes sure that the updated document is returned
@@ -364,7 +364,7 @@ const app = express();
         //     }
         // });  
         app.delete('/users/:Username', async (req, res) => {
-            await Users.findOneAndDelete({ username: req.params.Username })
+            await Users.findOneAndDelete({ Username: req.params.Username })
             .then((user) => {
                 if (!user) {
                 res.status(400).send(req.params.Username + ' was not found');
@@ -479,7 +479,7 @@ const app = express();
 
     // Get a user by username
         app.get('/users/:Username', async (req, res) => {
-            await Users.findOne({ username: req.params.Username })
+            await Users.findOne({ Username: req.params.Username })
             .then((user) => {
                 res.json(user);
             })
