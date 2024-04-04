@@ -473,9 +473,9 @@ const app = express();
             res.send ('Welcome to my movie page!');
         });
 
-        app.get('/movies', (req,res) => {
-            res.json(movies);
-        });
+        // app.get('/movies', (req,res) => {
+        //     res.json(movies);
+        // });
 
     // Get a user by username
         app.get('/users/:Username', async (req, res) => {
