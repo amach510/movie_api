@@ -366,9 +366,9 @@ app.use(morgan('common'));
       });
     
     // READ request (Movies)
-    // app.get('/movies', (req,res) => {
-    //     res.status(200).json(movies)
-    // });
+        // app.get('/movies', (req,res) => {
+        //     res.status(200).json(movies)
+        // });
         app.get('/movies', async (req, res) => {
             try {
                 const movies = await Movies.find();
@@ -379,16 +379,26 @@ app.use(morgan('common'));
             }
         });
         // READ request - title
-        app.get('/movies/:title', (req,res) => {
-            const { title } = req.params;
-            const movie = movies.find( movie => movie.title === title);
+            // app.get('/movies/:title', (req,res) => {
+            //     const { title } = req.params;
+            //     const movie = movies.find( movie => movie.title === title);
 
-            if (movie){
-                res.status(200).json(movie);
-            } else {
-                res.status(400).send('no such movie')
-            }
-        });
+            //     if (movie){
+            //         res.status(200).json(movie);
+            //     } else {
+            //         res.status(400).send('no such movie')
+            //     }
+            // });
+            app.get('/movies/:title', async (req, res) => {
+                await Movies.findOne({ Name: req.params.Name })
+                    .then((movie) => {
+                        res.json(movie);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        res.status(500).send('Error: ' + err);
+                    });
+            });
         // READ request - genre
         app.get('/movies/genre/:genrename', (req,res) => {
             const { genrename } = req.params;
