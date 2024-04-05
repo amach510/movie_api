@@ -311,7 +311,7 @@ const app = express();
         // });  
         app.post('/users/:Username/movies/:MovieID', async (req, res) => {
             await Users.findOneAndUpdate({ username: req.params.Username }, {
-            $push: { FavoriteMovies: req.params.MovieID }
+            $push: { favoriteMovies: req.params.MovieID }
             },
             { new: true }) // This line makes sure that the updated document is returned
             .then((updatedUser) => {
