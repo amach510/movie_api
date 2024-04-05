@@ -228,17 +228,17 @@ const app = express();
         //         res.status(400).send('user needs names')
         //     }
         // });
-        await Users.findOne({ Username: req.body.Username })
+        await Users.findOne({ username: req.body.Username })
           .then((user) => {
             if (user) {
               return res.status(400).send(req.body.Username + 'already exists');
             } else {
               Users
                 .create({
-                  Username: req.body.Username,
-                  Password: req.body.Password,
-                  Email: req.body.Email,
-                  Birthday: req.body.Birthday
+                  username: req.body.username,
+                  password: req.body.password,
+                  email: req.body.email,
+                  birthday: req.body.birthday
                 })
                 .then((user) =>{res.status(201).json(user) })
               .catch((error) => {
@@ -264,7 +264,7 @@ const app = express();
             (required)
             Birthday: Date
         }*/
-        app.put('/users/:id', async(req,res) => {
+        app.put('/users/:Username', async(req,res) => {
             //     const { id } = req.params;
             //     const updatedUser = req.body;
                 
@@ -279,10 +279,10 @@ const app = express();
             // });    
             await Users.findOneAndUpdate({ username: req.params.Username }, { $set:
                 {
-                Username: req.body.Username,
-                Password: req.body.Password,
-                Email: req.body.Email,
-                Birthday: req.body.Birthday
+                username: req.body.username,
+                password: req.body.password,
+                email: req.body.email,
+                birthday: req.body.birthday
                 }
             },
             { new: true }) // This line makes sure that the updated document is returned
