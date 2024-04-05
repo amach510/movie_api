@@ -277,7 +277,7 @@ const app = express();
             //         res.status(400).send('no such user')
             //     }
             // });    
-            await Users.findOneAndUpdate({ Username: req.params.Username }, { $set:
+            await Users.findOneAndUpdate({ username: req.params.Username }, { $set:
                 {
                 Username: req.body.Username,
                 Password: req.body.Password,
@@ -310,7 +310,7 @@ const app = express();
         //     }
         // });  
         app.post('/users/:Username/movies/:MovieID', async (req, res) => {
-            await Users.findOneAndUpdate({ Username: req.params.Username }, {
+            await Users.findOneAndUpdate({ username: req.params.Username }, {
             $push: { FavoriteMovies: req.params.MovieID }
             },
             { new: true }) // This line makes sure that the updated document is returned
@@ -337,7 +337,7 @@ const app = express();
         //     }
         // });
         app.delete('/users/:Username/movies/:MovieID', async (req, res) => {
-            await Users.findOneAndUpdate({ Username: req.params.Username }, {
+            await Users.findOneAndUpdate({ username: req.params.Username }, {
                 $pull: { FavoriteMovies: req.params.MovieID }
             },
             { new: true }) // This line makes sure that the updated document is returned
@@ -364,7 +364,7 @@ const app = express();
         //     }
         // });  
         app.delete('/users/:Username', async (req, res) => {
-            await Users.findOneAndDelete({ Username: req.params.Username })
+            await Users.findOneAndDelete({ username: req.params.Username })
             .then((user) => {
                 if (!user) {
                 res.status(400).send(req.params.Username + ' was not found');
@@ -479,7 +479,7 @@ const app = express();
 
     // Get a user by username
         app.get('/users/:Username', async (req, res) => {
-            await Users.findOne({ Username: req.params.Username })
+            await Users.findOne({ username: req.params.Username })
             .then((user) => {
                 res.json(user);
             })
