@@ -20,6 +20,13 @@ const app = express();
 // Morgan middleware library
     app.use(morgan('common'));    
 
+// Auth.js require
+    let auth = require('./auth')(app);
+
+// Passport.js require
+    const passport = require('passport');
+    require('./passport');
+
 // Log all requests
     // let users = [
     //     {
