@@ -237,7 +237,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             Email: String,
             Birthday: Date
         }*/
-    app.post('/users', passport.authenticate('jwt', {session: false}), async (req,res) => {
+    app.post('/users', async (req,res) => {
         //     const newUser = req.body;
             
         //     if (newUser.name) {
@@ -335,7 +335,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
         //         res.status(400).send('no such user')
         //     }
         // });  
-        app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', {session: false}), async (req, res) => {
+        app.post('/users/:Username/movies/:MovieID', async (req, res) => {
             await Users.findOneAndUpdate({ username: req.params.Username }, {
             $push: { favoriteMovies: req.params.MovieID }
             },
@@ -483,7 +483,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             });
     
     // READ all users
-        app.get('/users', passport.authenticate('jwt', {session: false}), async (req, res) => {
+        app.get('/users', async (req, res) => {
             await Users.find()
             .then((users) => {
                 res.status(201).json(users);
