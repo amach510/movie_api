@@ -16,6 +16,7 @@ const app = express();
 
 // Body Parser
     app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: true }));
 
 // Morgan middleware library
     app.use(morgan('common'));    
