@@ -296,6 +296,12 @@ const app = express();
             //         res.status(400).send('no such user')
             //     }
             // });    
+
+            // CONDITION TO CHECK ADDED HERE
+            if(req.user.Username !== req.params.Username){
+                return res.status(400).send('Permission denied');
+            }
+            // CONDITION ENDS
             await Users.findOneAndUpdate({ username: req.params.Username }, { $set:
                 {
                 username: req.body.username,
