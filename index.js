@@ -214,6 +214,18 @@ const app = express();
     //     }
     // ];
 
+    // JWT authentation endpoint
+    app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
+        await Movies.find()
+          .then((movies) => {
+            res.status(201).json(movies);
+          })
+          .catch((error) => {
+            console.error(error);
+            res.status(500).send('Error: ' + error);
+          });
+      });
+
     // CREATE request - new user
     //Add a user
         /* We’ll expect JSON in this format
