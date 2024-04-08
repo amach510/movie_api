@@ -114,7 +114,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             });
 
     // CREATE (POST) request - adding movie to favorites
-        app.post('/users/:Username/movies/:MovieID', async (req, res) => {
+        app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', {session: false}), async (req, res) => {
             // CONDITION TO CHECK ADDED HERE
             if(req.user.Username !== req.params.Username){
                 return res.status(400).send('Permission denied');
@@ -220,7 +220,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             });
     
     // READ all users
-        app.get('/users', async (req, res) => {
+        app.get('/users', passport.authenticate('jwt', {session: false}), async (req, res) => {
             await Users.find()
             .then((users) => {
                 res.status(201).json(users);
