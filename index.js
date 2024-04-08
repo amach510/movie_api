@@ -141,7 +141,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             }
             // CONDITION ENDS
             await Users.findOneAndUpdate({ username: req.params.Username }, {
-                $pull: { FavoriteMovies: req.params.MovieID }
+                $pull: { favoriteMovies: req.params.MovieID }
             },
             { new: true }) // This line makes sure that the updated document is returned
             .then((updatedUser) => {
