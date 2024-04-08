@@ -90,7 +90,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
         }*/
         app.put('/users/:Username', passport.authenticate('jwt', {session: false}), async(req,res) => {
             // CONDITION TO CHECK ADDED HERE
-            if(req.user.Username !== req.params.Username){
+            if(req.user.username !== req.params.Username){
                 return res.status(400).send('Permission denied');
             }
             // CONDITION ENDS
@@ -116,7 +116,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
     // CREATE (POST) request - adding movie to favorites
         app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', {session: false}), async (req, res) => {
             // CONDITION TO CHECK ADDED HERE
-            if(req.user.Username !== req.params.Username){
+            if(req.user.username !== req.params.Username){
                 return res.status(400).send('Permission denied');
             }
             // CONDITION ENDS
@@ -136,7 +136,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
     // DELETE (DELETE) request - delete movie from favorites
         app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', {session: false}), async (req, res) => {
             // CONDITION TO CHECK ADDED HERE
-            if(req.user.Username !== req.params.Username){
+            if(req.user.username !== req.params.Username){
                 return res.status(400).send('Permission denied');
             }
             // CONDITION ENDS
@@ -156,7 +156,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
     // DELETE (DELETE) request - delete existing user
         app.delete('/users/:Username', passport.authenticate('jwt', {session: false}), async (req, res) => {
             // CONDITION TO CHECK ADDED HERE
-            if(req.user.Username !== req.params.Username){
+            if(req.user.username !== req.params.Username){
                 return res.status(400).send('Permission denied');
             }
             // CONDITION ENDS
