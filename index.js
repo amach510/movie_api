@@ -8,6 +8,23 @@ const app = express();
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: true }));
 
+// CORS (Cross-Origin Resource Sharing)
+    const cors = require('cors');
+
+    // CORS for certain origins to have access
+    let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+
+        app.use(cors({
+        origin: (origin, callback) => {
+            if(!origin) return callback(null, true);
+            if(allowedOrigins.indexOf(origin) === -1){ // If a specific origin isn’t found on the list of allowed origins
+            let message = 'The CORS policy for this application doesn\'t allow access from origin ' + origin;
+            return callback(new Error(message ), false);
+            }
+            return callback(null, true);
+        }
+        }));
+
 // Auth.js require
     let auth = require('./auth')(app);
 
