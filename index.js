@@ -2,7 +2,6 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const uuid = require('uuid');
-const bcrypt = require('bcrypt');
 const { check, validationResult } = require('express-validator');
 const app = express();
 
