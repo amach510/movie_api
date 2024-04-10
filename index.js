@@ -127,12 +127,27 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             (required)
             Birthday: Date
         }*/
-        app.put('/users/:Username', passport.authenticate('jwt', {session: false}), async(req,res) => {
-            // CONDITION TO CHECK ADDED HERE
-            if(req.user.username !== req.params.Username){
-                return res.status(400).send('Permission denied');
+        app.put('/users/:Username', passport.authenticate('jwt', {session: false}),
+            // Validation logic here for request
+            //you can either use a chain of methods like .not().isEmpty()
+            //which means "opposite of isEmpty" in plain english "is not empty"
+            //or use .isLength({min: 5}) which means
+            //minimum value of 5 characters are only allowed
+            [
+                check('Username', 'Username is required').isLength({min: 5}),
+                check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+                check('Password', 'Password is required').not().isEmpty(),
+                check('Email', 'Email does not appear to be valid').isEmail()
+            ], async(req,res) => {
+            
+            // check the validation object for errors
+            let errors = validationResult(req);
+
+            if (!errors.isEmpty()) {
+            return res.status(422).json({ errors: errors.array() });
             }
-            // CONDITION ENDS
+
+            let hashedPassword = Users.hashPassword(req.body.Password);
             await Users.findOneAndUpdate({ username: req.params.Username }, { $set:
                 {
                 username: req.body.username,
