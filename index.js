@@ -98,7 +98,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
               Users
                 .create({
                   username: req.body.username,
-                  password: req.body.password,
+                  password: hashedPassword,
                   email: req.body.email,
                   birthday: req.body.birthday
                 })
@@ -150,7 +150,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             await Users.findOneAndUpdate({ username: req.params.Username }, { $set:
                 {
                 username: req.body.username,
-                password: req.body.password,
+                password: hashedPassword,
                 email: req.body.email,
                 birthday: req.body.birthday
                 }
