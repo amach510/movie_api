@@ -44,7 +44,7 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 //allows mongoose connection to database for CRUD
-mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://amach510:Arm839nice145!@cluster0.ilxmywp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Log all requests
     // JWT authentation endpoint
