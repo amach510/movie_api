@@ -76,10 +76,10 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
     //or use .isLength({min: 5}) which means
     //minimum value of 5 characters are only allowed
     [
-        check('Username', 'Username is required').isLength({min: 5}),
-        check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
-        check('Password', 'Password is required').not().isEmpty(),
-        check('Email', 'Email does not appear to be valid').isEmail()
+        check('username', 'Username is required').isLength({min: 5}),
+        check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+        check('password', 'Password is required').not().isEmpty(),
+        check('email', 'Email does not appear to be valid').isEmail()
     ], async (req,res) => {
         
         // check the validation object for errors
@@ -89,7 +89,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
         return res.status(422).json({ errors: errors.array() });
         }
 
-        let hashedPassword = Users.hashPassword(req.body.Password);
+        let hashedPassword = Users.hashPassword(req.body.password);
         await Users.findOne({ username: req.body.Username })
           .then((user) => {
             if (user) {
@@ -133,10 +133,10 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             //or use .isLength({min: 5}) which means
             //minimum value of 5 characters are only allowed
             [
-                check('Username', 'Username is required').isLength({min: 5}),
-                check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
-                check('Password', 'Password is required').not().isEmpty(),
-                check('Email', 'Email does not appear to be valid').isEmail()
+                check('username', 'Username is required').isLength({min: 5}),
+                check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+                check('password', 'Password is required').not().isEmpty(),
+                check('email', 'Email does not appear to be valid').isEmail()
             ], async(req,res) => {
             
             // check the validation object for errors
@@ -146,7 +146,7 @@ mongoose.connect('mongodb://localhost:27017/myFlix', { useNewUrlParser: true, us
             return res.status(422).json({ errors: errors.array() });
             }
 
-            let hashedPassword = Users.hashPassword(req.body.Password);
+            let hashedPassword = Users.hashPassword(req.body.password);
             await Users.findOneAndUpdate({ username: req.params.Username }, { $set:
                 {
                 username: req.body.username,
