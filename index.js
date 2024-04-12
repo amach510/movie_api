@@ -44,7 +44,7 @@ const Movies = Models.Movie;
 const Users = Models.User;
 
 //allows mongoose connection to database for CRUD
-mongoose.connect('process.env.CONNECTION_URI', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Log all requests
     // JWT authentation endpoint
