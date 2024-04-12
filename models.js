@@ -27,7 +27,7 @@ const bcrypt = require('bcrypt');
         return bcrypt.hashSync(password, 10);
       };
       
-      usersSchema.methods.validatePassword = function(password) {
+    usersSchema.methods.validatePassword = function(password) {
         return bcrypt.compareSync(password, this.password);
       };
     
