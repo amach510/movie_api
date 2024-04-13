@@ -1,0 +1,190 @@
+[{
+  "_id": {
+    "$oid": "65f4ad3b396cb38ef964ea9e"
+  },
+  "Title": "Spirited Away",
+  "Description": "Vivid and intriguing, Spirited Away tells the story of Chihiro's journey through an unfamiliar world as she strives to save her parents and return home.",
+  "Genre": {
+    "Name": "Supernatural",
+    "Description": "The supernatural genre encompasses storytelling that involves elements beyond the natural world, often featuring supernatural phenomena, mystical forces, paranormal activities, or entities that defy the laws of nature."
+  },
+  "Director": {
+    "Name": "Miyazaki, Hayao",
+    "Bio": "Founder of Studio Ghibli.",
+    "Birth": "1941",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTqTEoJUOlTg4HakvM3SHU0a7a3gFpAQ1HrBL21fBAr1OYOeocP",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f63b33405174221b0d570b"
+  },
+  "Title": "Your Name",
+  "Description": "Your Name revolves around Mitsuha and Taki's actions, which begin to have a dramatic impact on each other's lives, weaving them into a fabric held together by fate and circumstance.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations."
+  },
+  "Director": {
+    "Name": "Shinkai, Makoto",
+    "Bio": "He is a Japanese filmmaker and novelist. He is known for his anime feature films produced with studio CoMix Wave Films.",
+    "Birth": "1973",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSdCn7P_niNCbNFHt9vLgDc-YlRIhwvnCPtHzyiHVP_GK-XmDS1",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f63ead405174221b0d570c"
+  },
+  "Title": "Weathering with You",
+  "Description": "Enchanting yet bittersweet love story between a teenage boy who can control the weather and a girl with a mysterious ability, set against the backdrop of a Tokyo plagued by incessant rain.",
+  "Genre": {
+    "Name": "Romance",
+    "Description": "Romance is a genre characterized by narratives that center around love and emotional relationships, often highlighting the development of romantic connections, challenges, and the pursuit of intimacy between characters."
+  },
+  "Director": {
+    "Name": "Shinkai, Makoto",
+    "Bio": "He is a Japanese filmmaker and novelist. He is known for his anime feature films produced with studio CoMix Wave Films.",
+    "Birth": "1944",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfiDnbbGZmmZfAnbjsU_AKKAsRfa4VmskkCWbhrmrYqnVtZWq2",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f642ba5bb3ee347764ac6b"
+  },
+  "Title": "My Neighbor Totoro",
+  "Description": "The magical adventures of two young sisters who befriend forest spirits, particularly the lovable creature Totoro, while navigating the challenges of moving to a new countryside home.",
+  "Genre": {
+    "Name": "Supernatural",
+    "Description": "The supernatural genre encompasses storytelling that involves elements beyond the natural world, often featuring supernatural phenomena, mystical forces, paranormal activities, or entities that defy the laws of nature."
+  },
+  "Director": {
+    "Name": "Miyazaki, Hayao",
+    "Bio": "Founder of Studio Ghibli.",
+    "Birth": "1941",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShhQmWrd7gqouln_mhRDdoLy8MkIOwZj1cNx7xhUU2I4cB0IEJ",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f6438d5bb3ee347764ac6c"
+  },
+  "Title": "Nausicaä of the Valley of the Wind",
+  "Description": "The courageous Princess Nausicaä strives to bring harmony between humanity and the environment in a post-apocalyptic world threatened by toxic jungles and warring nations.",
+  "Genre": {
+    "Name": "Adventure",
+    "Description": "The adventure genre encompasses narratives that revolve around characters undertaking perilous journeys, quests, or explorations, often featuring excitement, challenges, and a sense of discovery in unfamiliar and thrilling environments."
+  },
+  "Director": {
+    "Name": "Miyazaki, Hayao",
+    "Bio": "Founder of Studio Ghibli.",
+    "Birth": "1941",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRGi4HGfC4oJM34jPoaTDWLvMOlNxiXk0DZSyO57mQtZb2FirdB",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f7256649b710c2293bc123"
+  },
+  "Title": "Redline",
+  "Description": "High-octane Japanese animated film, featuring intense, intergalactic racing competition as daredevil racer JP strives to win the ultimate Redline race on a dangerous and visually stunning alien planet.",
+  "Genre": {
+    "Name": "Sci-Fi",
+    "Description": "Science fiction, or sci-fi, is a genre that explores speculative and futuristic concepts, often incorporating advanced technology, space exploration, and scientific principles to envision alternative realities, possible futures, and the impact of scientific advancements on society."
+  },
+  "Director": {
+    "Name": "Koike, Takeshi",
+    "Bio": "Protogee of Yoshiaki Kawajiri",
+    "Birth": "1944",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-r0UhA_dp_pNbQQY1l1GytMTOEAS6qD-413w9f-2ME5tg6GEF",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f7268649b710c2293bc124"
+  },
+  "Title": "Princess Mononoke",
+  "Description": "Chronicling the journey of a young warrior named Ashitaka, who becomes entangled in a conflict between industrial humans and nature spirits, led by the fierce and enigmatic Princess Mononoke, in a beautifully crafted tale of environmentalism and the struggle for balance.",
+  "Genre": {
+    "Name": "Fantasy",
+    "Description": "Fantasy is a genre characterized by imaginative and often magical elements, where stories unfold in fantastical worlds with mythical creatures, magical powers, and extraordinary settings that go beyond the bounds of reality."
+  },
+  "Director": {
+    "Name": "Miyazaki, Hayao",
+    "Bio": "Founder of Studio Ghibli.",
+    "Birth": "1941",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQntZTJb1c6O4iFaT_Ll3w4a-R3TzlpID2dJ0wDdwjemnMbOx7r",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f7286349b710c2293bc125"
+  },
+  "Title": "Kiki's Delivery Service",
+  "Description": "Following the coming-of-age journey of a young witch named Kiki as she establishes her own delivery service in a quaint seaside town, discovering friendship and self-confidence along the way.",
+  "Genre": {
+    "Name": "Adventure",
+    "Description": "The adventure genre encompasses narratives that revolve around characters undertaking perilous journeys, quests, or explorations, often featuring excitement, challenges, and a sense of discovery in unfamiliar and thrilling environments."
+  },
+  "Director": {
+    "Name": "Miyazaki, Hayao",
+    "Bio": "Founder of Studio Ghibli.",
+    "Birth": "1941",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHAXQmo6UAT_P8xIAppBglmEruxxExDBGELnwXCqjDjZToWwXr",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f72a5049b710c2293bc126"
+  },
+  "Title": "A Silent Voice",
+  "Description": "A grade-school student with a hearing impairment is bullied and transfers to another school. Years later, the former bully is tormented by his behaviour and sets out to make amends.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations."
+  },
+  "Director": {
+    "Name": "Yamada, Naoko",
+    "Bio": "Directed the K-On! and Tamako Market anime series.",
+    "Birth": "1984",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQJrlYXvqlm1bAFMMfjhlX970K4B0z2AJv66KKb1Y9gW-4eml2X",
+  "Featured": false
+},
+{
+  "_id": {
+    "$oid": "65f72b5f49b710c2293bc127"
+  },
+  "Title": "Ride Your Wave",
+  "Description": "Blending romance and fantasy as it follows a young woman who discovers the transformative power of love and resilience after her surfer boyfriend's tragic death.",
+  "Genre": {
+    "Name": "Drama",
+    "Description": "The drama genre typically explores realistic and emotionally charged narratives, focusing on the complexities of human relationships, personal growth, and the everyday struggles and triumphs of characters in various life situations."
+  },
+  "Director": {
+    "Name": "Yuasa, Masaaki",
+    "Bio": "Co-founded Science SARU.",
+    "Birth": "1965",
+    "Death": "N/A"
+  },
+  "ImagePath": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5FoZxavLyV9NpxWm1XGPwVEQ0qAon_B6KIv55nJb3BAjfAX-V",
+  "Featured": false
+}]

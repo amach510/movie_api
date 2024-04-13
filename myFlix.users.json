@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "65f8957f34ec80371352ec1e"
+  },
+  "username": "JimothyIsCool",
+  "password": "ABC123",
+  "email": "jimothy@xyz.com",
+  "birthday": {
+    "$date": "1991-01-01T00:00:00.000Z"
+  },
+  "favoriteMovies": [
+    {
+      "$oid": "65f63b33405174221b0d570b"
+    },
+    {
+      "$oid": "65f4ad3b396cb38ef964ea9e"
+    },
+    {
+      "$oid": "65f63ead405174221b0d570c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f895ec34ec80371352ec1f"
+  },
+  "username": "Carebear225",
+  "password": "Bear1995",
+  "email": "carrie_beary@xyz.com",
+  "birthday": {
+    "$date": "1995-05-05T00:00:00.000Z"
+  },
+  "favoriteMovies": [
+    {
+      "$oid": "65f7268649b710c2293bc124"
+    },
+    {
+      "$oid": "65f4ad3b396cb38ef964ea9e"
+    },
+    {
+      "$oid": "65f642ba5bb3ee347764ac6b"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f8963f34ec80371352ec20"
+  },
+  "username": "AniMay1985",
+  "password": "T0t0r0",
+  "email": "animanic1985@xyz.com",
+  "birthday": {
+    "$date": "1985-12-31T00:00:00.000Z"
+  },
+  "favoriteMovies": [
+    {
+      "$oid": "65f4ad3b396cb38ef964ea9e"
+    },
+    {
+      "$oid": "65f63ead405174221b0d570c"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f8970434ec80371352ec21"
+  },
+  "username": "Jotorololol",
+  "password": "ItIsIDi0!",
+  "email": "notsobizarre1987@xyz.com",
+  "birthday": {
+    "$date": "2001-04-17T00:00:00.000Z"
+  },
+  "favoriteMovies": [
+    {
+      "$oid": "65f4ad3b396cb38ef964ea9e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "65f898e734ec80371352ec22"
+  },
+  "username": "AkinaGhost86",
+  "password": "AE864L!F3",
+  "email": "t0fub0i@xyz.com",
+  "birthday": {
+    "$date": "1997-11-03T00:00:00.000Z"
+  },
+  "favoriteMovies": [
+    {
+      "$oid": "65f4ad3b396cb38ef964ea9e"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "660f4c4197c75c00b6f3060d"
+  },
+  "username": "DonkeyKong99",
+  "password": "MarioIsTrash",
+  "email": "barrelchucker2000@xyz.com",
+  "birthday": {
+    "$date": "1981-07-09T00:00:00.000Z"
+  },
+  "favoriteMovies": [
+    {
+      "$oid": "65f63b33405174221b0d570b"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "661726866d7316e758e0ff8c"
+  },
+  "username": "NotAdmin",
+  "password": "DefinitelyNot@dmin",
+  "email": "clearlynotadmin@xyz.com",
+  "birthday": {
+    "$date": {
+      "$numberLong": "-27080352000000"
+    }
+  },
+  "favoriteMovies": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66199a6d122868cc61fb452c"
+  },
+  "username": "heckyeah",
+  "password": "$2b$10$dNCGyUSWl7ld3CmQEbtU7eQ4cnGWfxzVPWRV3N7UqhPxz.QNOS/s2",
+  "email": "ohsnap444@test.com",
+  "birthday": {
+    "$date": "1991-01-01T00:00:00.000Z"
+  },
+  "favoriteMovies": [],
+  "__v": 0
+}]
