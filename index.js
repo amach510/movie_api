@@ -13,7 +13,7 @@ const app = express();
     const cors = require('cors');
 
     // CORS for certain origins to have access
-    let allowedOrigins = ['http://localhost:8080', 'http://testsite.com'];
+    let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'https://my-flix-database-movie-app-5157085d44be.herokuapp.com'];
 
         app.use(cors({
         origin: (origin, callback) => {
