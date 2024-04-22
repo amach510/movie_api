@@ -91,7 +91,7 @@ app.post('/users', [
 
 // UPDATE (PUT) request - existing user update
 
-app.put('/users/:Username', passport.authenticate('jwt', {session: false})[
+app.put('/users/:Username', passport.authenticate('jwt', {session: false}), [
         check('username', 'Username is required').isLength({min: 5}),
         check('username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
         check('password', 'Password is required').not().isEmpty(),
