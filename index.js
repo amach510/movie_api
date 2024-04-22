@@ -47,18 +47,6 @@ const Users = Models.User;
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Log all requests
-    // JWT authentation endpoint
-app.get('/movies', passport.authenticate('jwt', { session: false }), async (req, res) => {
-    await Movies.find()
-        .then((movies) => {
-        res.status(201).json(movies);
-        })
-        .catch((error) => {
-        console.error(error);
-        res.status(500).send('Error: ' + error);
-        });
-    });
-
 // CREATE request - new user
     //Add a user
 app.post('/users', [
