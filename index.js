@@ -188,14 +188,15 @@ app.delete('/users/:Username', passport.authenticate('jwt', {session: false}), a
 
 // READ request (Movies)
 app.get('/movies', async (req, res) => {
-    try {
-        const movies = await Movies.find();
-        res.status(200).json(movies);
-    } catch (error) {
+    await Movies.find()
+        .then((movies) => {
+        res.status(201).json(movies);
+        })
+        .catch((error) => {
         console.error(error);
         res.status(500).send('Error: ' + error);
-    }
-});
+        });
+    });
 // READ request - title
 app.get('/movies/:title', passport.authenticate('jwt', {session: false}), async (req, res) => {
     await Movies.findOne({ Title: req.params.title })
