@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require('cors');
 
 // CORS for certain origins to have access
-let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'https://my-flix-database-movie-app-5157085d44be.herokuapp.com', 'http://localhost:1234', 'https://my-flix-database-movie-app-5157085d44be.herokuapp.com/users','http://localhost:1234/users', 'https://my-flix-database-app.netlify.app', 'http://localhost:4200'];
+let allowedOrigins = ['http://localhost:8080', 'http://testsite.com', 'https://my-flix-database-movie-app-5157085d44be.herokuapp.com', 'http://localhost:1234', 'https://my-flix-database-movie-app-5157085d44be.herokuapp.com/users','http://localhost:1234/users', 'https://my-flix-database-app.netlify.app', 'http://localhost:4200', 'http://localhost:4200/users'];
 
 app.use(cors({
 origin: (origin, callback) => {
