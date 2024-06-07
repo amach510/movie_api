@@ -21,5 +21,4 @@ The "Movie API" serves as the backend for the MyFlix movie database application.
 - uuid
 
 ## Link to API
-
 Hosted on Heroku:[myFlix-Database](https://my-flix-database-movie-app-5157085d44be.herokuapp.com/)
